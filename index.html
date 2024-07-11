@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFEFCD;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 29px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .password-toggle {
+            position: relative;
+            display: inline-block;
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .password-toggle input[type="password"] {
+            width: calc(100% - 32px);
+            padding: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .password-toggle .toggle-btn {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .login-form input[type="submit"] {
+            width: 100%;
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        .login-form input[type="submit"]:hover {
+            background-color: #131d3b;
+        }
+
+        .create-account {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .create-account a {
+            color: #357ebd;
+            text-decoration: none;
+        }
+
+        .create-account a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-btn {
+    background-color: #357ebd;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #3c8dbc;
+}
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>90 Days Challenger</h2>
+        <form class="login-form" action="#" onsubmit="return validateLogin()">
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <br>
+            <div class="password-toggle">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <span class="toggle-btn" onclick="togglePasswordVisibility()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 12a4 4 0 0 0 4-4 4 4 0 0 0-8 0 4 4 0 0 0 4 4zm2.5-4a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                        <path fill-rule="evenodd" d="M0 8s4-5.5 8-5.5c.403 0 .787.074 1.144.208C9.046 3.004 8.549 3 8 3 4 3 0 8 0 8zm8 3a5.5 5.5 0 1 1 5.145-3.766.5.5 0 0 0-.95.31A4.5 4.5 0 1 0 8 11c.549 0 1.046-.004 1.195-.054a.5.5 0 0 0 .95-.31A5.5 5.5 0 0 1 8 11z"/>
+                    </svg>
+                </span>
+            </div>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+        <div class="create-account">
+            <p>Don't have an account? <a href="#" onclick="alert('Please contact the administrator to create an account.');">Create one</a></p>
+        </div>
+            <!-- Existing content -->
+            <button class="contact-btn" onclick="openWhatsApp()">Contact Admin</button>
+        
+    </div>
+    
+
+    <script>
+        function validateLogin() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Check if email and password match the expected credentials
+            if (email === 'shakespeare' && password === 'admin') {
+                // Redirect to index.html or your desired page
+                window.location.href = 'index.html';
+                return false; // Prevent form submission
+            } else {
+                alert('Invalid email or password. Please try again.');
+                return false; // Prevent form submission
+            }
+        }
+
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById('password');
+            var toggleBtn = document.querySelector('.toggle-btn');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.146 1.646a.5.5 0 0 1 .708 0l13 13a.5.5 0 0 1-.708.708l-13-13a.5.5 0 0 1 0-.708zm12.24 3.839a3 3 0 0 1 0 5.303l-1.18-.787a2 2 0 0 0 0-3.718l1.18-.787zm-3.284.762a2.5 2.5 0 0 1 0 4.476l-.988-.659a1.5 1.5 0 0 0 0-2.658l.988-.659zm-7.366 2.25a6.5 6.5 0 0 1 10.792 0l-1.158.771a5.5 5.5 0 0 0-8.476 0l-1.158-.771zM8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>';
+            } else {
+                passwordField.type = 'password';
+                toggleBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a4 4 0 0 0 4-4 4 4 0 0 0-8 0 4 4 0 0 0 4 4zm2.5-4a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path fill-rule="evenodd" d="M0 8s4-5.5 8-5.5c.403 0 .787.074 1.144.208C9.046 3.004 8.549 3 8 3 4 3 0 8 0 8zm8 3a5.5 5.5 0 1 1 5.145-3.766.5.5 0 0 0-.95.31A4.5 4.5 0 1 0 8 11c.549 0 1.046-.004 1.195-.054a.5.5 0 0 0 .95-.31A5.5 5.5 0 0 1 8 11z"/></svg>';
+            }
+        }
+
+        function openWhatsApp() {
+    // Replace with your WhatsApp number and message
+    var phoneNumber = '+918837067635';
+    var message = 'Please create an account for me.';
+
+    // Create the WhatsApp link
+    var whatsappLink = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message);
+
+    // Open the WhatsApp link in a new tab
+    window.open(whatsappLink, '_blank');
+}
+
+    </script>
+</body>
+</html>
