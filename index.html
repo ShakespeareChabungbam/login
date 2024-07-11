@@ -98,26 +98,48 @@
         }
 
         .contact-btn {
-    background-color: #357ebd;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 10px;
-    cursor: pointer;
-    border-radius: 3px;
-    transition: background-color 0.3s;
-}
+            background-color: #357ebd;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
 
-.contact-btn:hover {
-    background-color: #3c8dbc;
-}
+        .contact-btn:hover {
+            background-color: #3c8dbc;
+        }
 
+        .back-btn {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .back-btn:hover {
+            background-color: #363636;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
+    <button class="back-btn" onclick="goBack()">Back</button>
     <div class="login-container">
         <h2>90 Days Challenger</h2>
         <form class="login-form" action="#" onsubmit="return validateLogin()">
@@ -138,11 +160,9 @@
         <div class="create-account">
             <p>Don't have an account? <a href="#" onclick="alert('Please contact the administrator to create an account.');">Create one</a></p>
         </div>
-            <!-- Existing content -->
-            <button class="contact-btn" onclick="openWhatsApp()">Contact Admin</button>
-        
+        <button class="contact-btn" onclick="openWhatsApp()">Contact Admin</button>
+        <br>
     </div>
-    
 
     <script>
         function validateLogin() {
@@ -174,17 +194,20 @@
         }
 
         function openWhatsApp() {
-    // Replace with your WhatsApp number and message
-    var phoneNumber = '+918837067635';
-    var message = 'Please create an account for me.';
+            // Replace with your WhatsApp number and message
+            var phoneNumber = '+918837067635';
+            var message = 'Please create an account for me.';
 
-    // Create the WhatsApp link
-    var whatsappLink = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message);
+            // Create the WhatsApp link
+            var whatsappLink = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message);
 
-    // Open the WhatsApp link in a new tab
-    window.open(whatsappLink, '_blank');
-}
+            // Open the WhatsApp link in a new tab
+            window.open(whatsappLink, '_blank');
+        }
 
+        function goBack() {
+            window.location.href = 'https://shakespeareclouds.my.canva.site/90days-challenges';
+        }
     </script>
 </body>
 </html>
