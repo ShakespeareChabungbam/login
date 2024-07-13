@@ -136,11 +136,17 @@
             background-color: #363636;
             color: #fff;
         }
+
+        .full-width-image {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <button class="back-btn" onclick="goBack()">Back</button>
     <div class="login-container">
+        <img src="logo.png" alt="Full Width Image" class="full-width-image" onerror="this.onerror=null; this.src='placeholder.png'; this.alt='Image not found';">
         <h2>90 Days Challenger</h2>
         <form class="login-form" action="#" onsubmit="return validateLogin()">
             <input type="text" id="email" name="email" placeholder="Email" required>
@@ -206,7 +212,7 @@
         }
 
         function goBack() {
-            window.location.href = 'https://shakespearechabungbam.github.io/90days-challenge/';
+            window.location.href = 'https://shakespeareclouds.my.canva.site/90days-challenges';
         }
     </script>
 </body>
