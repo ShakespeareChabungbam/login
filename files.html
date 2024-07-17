@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Files</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            font-size: 24px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+
+        .file-box {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .file-box:hover {
+            background-color: #f1f1f1;
+        }
+
+        .file-name {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .download-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Important Files</div>
+    <div class="container">
+        <div class="file-box">
+            <span class="file-name">OBC 2024</span>
+            <a class="download-btn" href="OBC.pdf" download>Download</a>
+        </div>
+        <div class="file-box">
+            <span class="file-name">Passport Photo 1</span>
+            <a class="download-btn" href="Passport1.jpg" download>Download</a>
+        </div>
+        <div class="file-box">
+            <span class="file-name">BCA syllabus</span>
+            <a class="download-btn" href="BCA final syllabus 2012.doc" download>Download</a>
+        </div>
+        <div class="file-box">
+            <span class="file-name">File 3</span>
+            <a class="download-btn" href="path/to/file3" download>Download</a>
+        </div>
+        <div class="file-box">
+            <span class="file-name">File 3</span>
+            <a class="download-btn" href="path/to/file3" download>Download</a>
+        </div>
+        <!-- Add more file boxes as needed -->
+    </div>
+</body>
+</html>
