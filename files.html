@@ -93,57 +93,33 @@
             <span class="file-name">OBC 2024</span>
             <div class="button-group">
                 <a class="btn download-btn" href="OBC.pdf" download>Download</a>
-                <button class="btn share-btn" onclick="shareFile('OBC.pdf', 'OBC 2024 Document', 'Check out the OBC 2024 document!')">Share</button>
             </div>
         </div>
         <div class="file-box">
             <span class="file-name">Passport Photo 1</span>
             <div class="button-group">
                 <a class="btn download-btn" href="Passport1.jpg" download>Download</a>
-                <button class="btn share-btn" onclick="shareFile('Passport1.jpg', 'Passport Photo', 'Here is the passport photo.')">Share</button>
             </div>
         </div>
         <div class="file-box">
             <span class="file-name">BCA syllabus</span>
             <div class="button-group">
                 <a class="btn download-btn" href="BCA final syllabus 2012.doc" download>Download</a>
-                <button class="btn share-btn" onclick="shareFile('BCA final syllabus 2012.doc', 'BCA Syllabus', 'Check out the BCA final syllabus 2012.')">Share</button>
             </div>
         </div>
         <div class="file-box">
             <span class="file-name">MCA syllabus</span>
             <div class="button-group">
                 <a class="btn download-btn" href="sysllabusMCA2year2022.pdf" download>Download</a>
-                <button class="btn share-btn" onclick="shareFile('sysllabusMCA2year2022.pdf', 'MCA Syllabus', 'Check out the MCA syllabus for 2022.')">Share</button>
             </div>
         </div>
         <div class="file-box">
             <span class="file-name">File 3</span>
             <div class="button-group">
                 <a class="btn download-btn" href="path/to/file3" download>Download</a>
-                <button class="btn share-btn" onclick="shareFile('path/to/file3', 'File 3', 'Here is file 3.')">Share</button>
             </div>
         </div>
         <!-- Add more file boxes as needed -->
     </div>
-    <script>
-        function shareFile(filePath, title, text) {
-            const url = window.location.origin + '/' + filePath;
-            console.log(`Sharing URL: ${url}`);  // Debugging line
-            if (navigator.share) {
-                navigator.share({
-                    title: title,
-                    text: text,
-                    url: url
-                }).then(() => {
-                    console.log('File shared successfully');
-                }).catch((error) => {
-                    console.error('Error sharing file:', error);
-                });
-            } else {
-                alert('Sharing is not supported in this browser. Please copy the link manually.');
-            }
-        }
-    </script>
 </body>
 </html>
