@@ -128,11 +128,13 @@
     </div>
     <script>
         function shareFile(filePath) {
+            const url = window.location.origin + '/' + filePath;
+            console.log(`Sharing URL: ${url}`);  // Debugging line
             if (navigator.share) {
                 navigator.share({
                     title: 'Important Files',
                     text: 'Check out this file: ' + filePath,
-                    url: window.location.href + filePath
+                    url: url
                 }).then(() => {
                     console.log('File shared successfully');
                 }).catch((error) => {
@@ -145,4 +147,3 @@
     </script>
 </body>
 </html>
-
