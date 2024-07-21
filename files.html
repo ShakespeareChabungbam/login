@@ -13,16 +13,55 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #f8f9fa;
+            background-image: url('#');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: background-image 0.3s;
         }
 
         .header {
             width: 100%;
             text-align: center;
-            background-color: #343a40;
+            background-color: rgba(52, 58, 64, 0.9);
             color: white;
             padding: 10px 0;
             font-size: 24px;
+            position: relative;
+        }
+
+        .search-container {
+            display: none;
+            width: 100%;
+            justify-content: center;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .search-container.active {
+            display: flex;
+        }
+
+        .search-container input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .search-container button:hover {
+            background-color: #0056b3;
         }
 
         .container {
@@ -84,10 +123,21 @@
         .share-btn:hover {
             background-color: #0056b3;
         }
+
+        /* Additional styles for search background */
+        .search-active {
+            background-image: url('searchbackground.gif') !important;
+        }
     </style>
 </head>
 <body>
-    <div class="header">Important Files</div>
+    <div class="header">
+        Important Files
+    </div>
+    <button id="open-search-btn" style="margin-top: 10px;">🔍</button>
+    <div class="search-container" id="search-container">
+        <input type="text" id="search-input" placeholder="Search files...">
+    </div>
     <div class="container">
         <div class="file-box">
             <span class="file-name">OBC 2024</span>
@@ -121,5 +171,26 @@
         </div>
         <!-- Add more file boxes as needed -->
     </div>
+    <script>
+        document.getElementById('open-search-btn').addEventListener('click', function() {
+            const searchContainer = document.getElementById('search-container');
+            const html = document.documentElement;
+            searchContainer.classList.toggle('active');
+            html.classList.toggle('search-active');
+        });
+
+        document.getElementById('search-input').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            const files = document.querySelectorAll('.file-box');
+            files.forEach(function(file) {
+                const fileName = file.querySelector('.file-name').textContent.toLowerCase();
+                if (fileName.includes(query)) {
+                    file.style.display = 'flex';
+                } else {
+                    file.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
